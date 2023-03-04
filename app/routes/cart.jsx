@@ -3,6 +3,9 @@ import {json} from '@shopify/remix-oxygen';
 import { CartLineItems } from '~/components/Cart';
 import { CART_QUERY } from '~/queries/cart';
 import { CartActions,CartSummary } from '~/components/Cart';
+//
+
+//
 export async function loader({context}) {
   const cartId = await context.session.get('cartId');
 
@@ -108,7 +111,7 @@ export default function Cart() {
         <div className="fixed left-0 right-0 bottom-0 md:sticky md:top-[65px] grid gap-6 p-4 md:px-6 md:translate-y-4 bg-gray-100 rounded-md w-full">
         <div className="fixed left-0 right-0 bottom-0 md:sticky md:top-[65px] grid gap-6 p-4 md:px-6 md:translate-y-4 bg-gray-100 rounded-md w-full">
         <CartSummary cost={cart.cost} />
-        <CartActions checkoutUrl={cart.checkoutUrl} />
+        <CartActions checkoutUrl={cart.checkoutUrl} subtotalAmount={cart.subtotalAmount}/>
         </div>
 
         </div>

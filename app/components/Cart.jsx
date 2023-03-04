@@ -1,6 +1,6 @@
 import {Link, useFetcher} from '@remix-run/react';
 import {flattenConnection, Image, Money} from '@shopify/hydrogen-react';
-
+import MpesaButton from '~/components/MpesaButton';
 export function CartLineItems({linesObj}) {
   const lines = flattenConnection(linesObj);
   return (
@@ -87,6 +87,7 @@ function ItemRemoveButton({lineIds}) {
   }
   
   export function CartSummary({cost}) {
+    const subtotalAmount = cost?.subtotalAmount?.amount;
     return (
       <>
         <dl className="space-y-2">
@@ -106,6 +107,7 @@ function ItemRemoveButton({lineIds}) {
             </dt>
             <dd className="text-green-600">Free and carbon neutral</dd>
           </div>
+          <MpesaButton subtotalAmount={subtotalAmount} />
         </dl>
       </>
     );
@@ -116,13 +118,9 @@ function ItemRemoveButton({lineIds}) {
   
     return (
       <div className="flex flex-col mt-2">
-        <a
-          href={checkoutUrl}
-          className="bg-black text-white px-6 py-3 w-full rounded-md text-center font-medium"
-        >
-          Continue to Checkout
-        </a>
+        
       </div>
+      
     );
   }
   
