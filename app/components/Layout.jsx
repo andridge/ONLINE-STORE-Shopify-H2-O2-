@@ -107,7 +107,7 @@ useEffect(() => {
                   </div>
                   <div className="w-full md:px-12 px-4 py-6 space-y-6 border border-1 border-gray-00">
                     <CartSummary cost={data.cost} />
-                    <CartActions checkoutUrl={data.checkoutUrl} subtotalAmount={subtotalAmount} />
+                  
                   </div>
                 </>
               ) : (
