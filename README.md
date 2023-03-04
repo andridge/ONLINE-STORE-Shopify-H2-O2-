@@ -17,10 +17,6 @@
 
 - Node.js version 16.14.0 or higher
 
-```bash
-npm create @shopify/hydrogen@latest --template hello-world
-```
-
 Remember to update `.env` with your SHOPS DOMAIN and STOREFRONT API TOKEN!
 
 ## Building for production
