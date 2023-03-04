@@ -1,3 +1,4 @@
+![04](https://user-images.githubusercontent.com/46260701/222933625-0a3e1b42-a544-4ab3-9f85-d69208afcad3.png)
 
 ## What's included
 
@@ -5,6 +6,8 @@
 - Hydrogen
 - Oxygen
 - Shopify CLI
+- React js
+- Mpesa API
 - ESLint
 - Prettier
 - GraphQL generator
