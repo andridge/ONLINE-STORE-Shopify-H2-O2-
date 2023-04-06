@@ -7,7 +7,8 @@
     "build": "npm run build:css && remix build",
     "build:css": "postcss app/styles/tailwind.css -o app/styles/tailwind-build.css ",
     "dev": "npm run build:css && concurrently -g -r npm:dev:css \"shopify hydrogen dev\"",
-    "dev:css": "postcss app/styles/tailwind.css -o app/styles/tailwind-build.css -w"
+    "dev:css": "postcss app/styles/tailwind.css -o app/styles/tailwind-build.css -w",
+    "prebuild": "npm install -g @remix-run/cli"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
@@ -28,6 +29,7 @@
     "postcss-cli": "^10.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rmx-cli": "^0.3.6",
     "tailwindcss": "^3.2.7"
   },
   "devDependencies": {
