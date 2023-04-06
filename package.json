@@ -8,12 +8,11 @@
     "build:css": "postcss app/styles/tailwind.css -o app/styles/tailwind-build.css ",
     "dev": "npm run build:css && concurrently -g -r npm:dev:css \"shopify hydrogen dev\"",
     "dev:css": "postcss app/styles/tailwind.css -o app/styles/tailwind-build.css -w"
-   
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
     "@headlessui/react": "^1.7.13",
-    "@remix-run/react": "1.12.0",
+    "@remix-run/react": "^1.15.0",
     "@shopify/cli": "3.29.0",
     "@shopify/cli-hydrogen": "^4.0.8",
     "@shopify/hydrogen": "^2023.1.5",
