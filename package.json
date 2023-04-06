@@ -8,7 +8,7 @@
     "build:css": "postcss app/styles/tailwind.css -o app/styles/tailwind-build.css ",
     "dev": "npm run build:css && concurrently -g -r npm:dev:css \"shopify hydrogen dev\"",
     "dev:css": "postcss app/styles/tailwind.css -o app/styles/tailwind-build.css -w",
-    "prebuild": "npm i @shopify/cli-hydrogen",
+    "prebuild": "npm i @shopify/cli-hydrogen"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
