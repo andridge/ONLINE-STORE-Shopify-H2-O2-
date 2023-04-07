@@ -11,6 +11,6 @@
     "static": {
       "basePath": "dist/client/build"
     },
-    "root": "app"
+    "output": "app"
   }
   
