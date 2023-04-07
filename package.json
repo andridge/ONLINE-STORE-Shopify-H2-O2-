@@ -4,7 +4,7 @@
   "sideEffects": false,
   "version": "0.0.0",
   "scripts": {
-    "build": "npm run build:css &&npm i @shopify/cli-hydrogen && shopify hydrogen build",
+    "build": "npm run build:css && npm install -g @shopify/cli-hydrogen && shopify hydrogen build",
     "build:css": "postcss app/styles/tailwind.css -o app/styles/tailwind-build.css ",
     "dev": "npm run build:css && concurrently -g -r npm:dev:css \"shopify hydrogen dev\"",
     "dev:css": "postcss app/styles/tailwind.css -o app/styles/tailwind-build.css -w"
