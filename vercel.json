@@ -1,9 +1,5 @@
 {
     "version": 2,
-    "builds": [
-      { "src": "app/entry.server.jsx", "use": "@vercel/node" },
-      { "src": "app/entry.client.jsx", "use": "@vercel/node" }
-    ],
     "routes": [
       { "src": "/api/(.*)", "dest": "/api/$1" },
       { "src": "/(.*)", "dest": "/app/$1" }
