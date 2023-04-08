@@ -11,6 +11,10 @@
       "use": "@remix-run/dev/server-build"
     },
     {
+      "src": "api/**",
+      "use": "@remix-run/dev/api-build"
+    },
+    {
       "src": "app/**",
       "use": "@vercel/static",
       "config": { "basePath": "dist/client" }
