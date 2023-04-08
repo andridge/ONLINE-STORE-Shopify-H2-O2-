@@ -1,5 +1,5 @@
 // Virtual entry point for the app
-import remixBuild from './ok.js';
+import * as remixBuild from '@remix-run/dev/server-build';
 import {createStorefrontClient, storefrontRedirect} from '@shopify/hydrogen';
 import {
   createRequestHandler,
