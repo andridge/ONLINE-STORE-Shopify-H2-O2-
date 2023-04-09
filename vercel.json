@@ -14,7 +14,7 @@
     },
     {
       "src": "./server",
-      "use": "@remix-run/dev",
+      "use": "npm:@remix-run/dev",
       "config": {"basePath": "dist/worker" }
     },
     {
