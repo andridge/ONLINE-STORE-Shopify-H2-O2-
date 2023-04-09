@@ -6,7 +6,7 @@
     { "src": "/(.*)", "dest": "/app/$1" }
   ],
   "builds": [
-    { "src": "server.js", "use": "@vercel/remix-run/dev" },
+    { "src": "server.js", "use": "@vercel/node" },
     {
       "src": "app/**",
       "use": "@vercel/static",
@@ -14,8 +14,8 @@
     },
     {
       "src": "./server",
-      "use": "npm:@remix-run/dev",
-      "config": {"basePath": "dist/worker" }
+      "use": "npm:@remix-run/build",
+      "config": { "basePath": "dist/worker", "entry": "./server" }
     },
     {
       "src": "./build.css",
