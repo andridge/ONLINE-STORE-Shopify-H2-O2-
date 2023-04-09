@@ -14,8 +14,8 @@
     },
     {
       "src": "./server",
-      "use": "@shopify/hydrogen",
-      "config": { "entry": "./server" }
+      "use": "@remix-run/dev",
+      "config": {"basePath": "dist/worker" }
     },
     {
       "src": "./build.css",
