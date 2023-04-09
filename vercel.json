@@ -6,7 +6,7 @@
     { "src": "/(.*)", "dest": "/app/$1" }
   ],
   "builds": [
-    { "src": "server.js", "use": "@remix-run/dev" },
+    { "src": "server.js", "use": "@vercel/remix-run/dev" },
     {
       "src": "app/**",
       "use": "@vercel/static",
