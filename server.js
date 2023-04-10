@@ -10,25 +10,7 @@ import {
 /**
  * Export a fetch handler in module format.
  */
- export default {
-  async build({request}) {
-    try {
-      /**
-       * Create a Remix request handler and pass
-       * Hydrogen's Storefront client to the loader context.
-       */
-      const handleRequest = createRequestHandler({
-        build: remixBuild,
-        mode: process.env.NODE_ENV,
-      });
-
-      return handleRequest(request);
-    } catch (error) {
-      console.error(error);
-      throw error;
-    }
-  },
-
+export default {
   async fetch(request, env, executionContext) {
     try {
       /**
@@ -83,6 +65,7 @@ import {
 
       return response;
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
       return new Response('An unexpected error occurred', {status: 500});
     }
