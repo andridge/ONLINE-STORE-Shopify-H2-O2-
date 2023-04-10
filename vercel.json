@@ -3,7 +3,7 @@
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/", "dest": "/server.js" },
-    { "src": "/(.*)", "dest": "/app/$1" }
+    { "src": "/(.*)", "dest": "/server.js" }
   ],
   "builds": [
     { "src": "server.js", "use": "@vercel/node" },
