@@ -1,8 +1,7 @@
 // Virtual entry point for the app
-import * as remixBuild from '@remix-run/dev/server-build';
+import { createRequestHandler } from '@remix-run/worker';
 import {createStorefrontClient, storefrontRedirect} from '@shopify/hydrogen';
 import {
-  createRequestHandler,
   getBuyerIp,
   createCookieSessionStorage,
 } from '@shopify/remix-oxygen';
