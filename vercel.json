@@ -2,11 +2,24 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
-      "use": "@remix-run"
+      "src": "app/server.js",
+      "use": "@vercel/node",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    },
+    {
+      "src": "app/styles/tailwind.css",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/server.js" }
-  ]
+    {
+      "src": "/(.*)",
+      "dest": "/app/:1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
