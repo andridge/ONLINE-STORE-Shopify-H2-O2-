@@ -2,21 +2,25 @@
   "version": 2,
   "builds": [
     {
-      "src": "app/server.js",
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "app/**/*.js",
       "use": "@vercel/node",
       "config": {
-        "maxLambdaSize": "50mb"
+        "maxLambdaSize": "10mb"
       }
     },
     {
-      "src": "app/styles/tailwind.css",
+      "src": "public/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/app/:1"
+      "dest": "server.js"
     }
   ],
   "env": {
