@@ -10,10 +10,10 @@ import {
 /**
  * Export a fetch handler in module format.
  */
-export default {
-  async fetch(request, env, executionContext) {
-    try {
-      /**
+ async function fetch(request, env, executionContext) {
+  try {
+    // Your fetch function implementation goes here
+     /**
        * Open a cache instance in the worker and a custom session instance.
        */
       if (!env?.SESSION_SECRET) {
@@ -64,13 +64,12 @@ export default {
       }
 
       return response;
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-      return new Response('An unexpected error occurred', {status: 500});
-    }
-  },
-};
+  } catch (error) {
+    console.error(error);
+    return new Response('An unexpected error occurred', {status: 500});
+  }
+}
+
 
 /**
  * This is a custom session implementation for your Hydrogen shop.
@@ -125,3 +124,4 @@ class HydrogenSession {
     return this.sessionStorage.commitSession(this.session);
   }
 }
+export { fetch };
