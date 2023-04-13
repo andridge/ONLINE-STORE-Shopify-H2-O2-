@@ -4,12 +4,32 @@
     {
       "src": "server.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "app/**/*.js",
+      "use": "@remix-run/dev/server-build",
+      "config": {
+        "maxLambdaSize": "10mb"
+      }
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "server.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "alias": [
+    {
+      "source": "/dist/worker/(.*)",
+      "destination": "/list/worker/$1"
     }
   ]
 }
