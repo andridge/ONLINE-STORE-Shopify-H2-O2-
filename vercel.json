@@ -16,9 +16,6 @@
   "env": {
     "HYDROGEN_ASSET_BASE_URL": "/"
   },
-  "files": [
-    "public/**/*"
-  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/server.js" }
   ],
