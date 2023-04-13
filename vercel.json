@@ -1,11 +1,12 @@
 {
   "version": 2,
   "builds": [
-    { "src": "server.js", "use": "@remix-run/dev" },
     {
-      "src": "app/**",  
-      "use": "@vercel/static",
-      "config": { "basePath": "dist/client" }
+      "src": "server.js",
+      "use": "@remix-run/dev/server-build"
     }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/server.js" }
   ]
 }
