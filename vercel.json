@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "server.js",
-      "use": "@remix-run/dev/"
+      "use": "@remix-run"
     }
   ],
   "routes": [
