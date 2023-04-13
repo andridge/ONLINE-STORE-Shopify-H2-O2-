@@ -1,35 +1,27 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "app/**/*.js",
-      "use": "@remix-run/dev",
-      "config": {
-        "maxLambdaSize": "10mb"
-      }
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server.js"
-    }
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/", "dest": "/server.js" },
+    { "src": "/(.*)", "dest": "/app/$1" }
   ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "alias": [
+  "builds": [
+    { "src": "server.js", "use": "@vercel/node" },
     {
-      "source": "/dist/worker/(.*)",
-      "destination": "/list/worker/$1"
+      "src": "app/**",
+      "use": "@vercel/static",
+      "config": { "basePath": "dist/client" }
+    },
+    {
+      "src": "./server",
+      "use": "@shopify/hydrogen",
+      "config": { "entry": "./server" }
+    },
+    {
+      "src": "./build.css",
+      "use": "npm:build:css",
+      "config": { "entry": "./build.css" }
     }
   ]
-}
+
+} 
