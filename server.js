@@ -1,5 +1,5 @@
 // Virtual entry point for the app
-import * as remixBuild from '@remix-run/dev/server-build';
+import * as remix from '@remix-run/dev';
 import {createStorefrontClient, storefrontRedirect} from '@shopify/hydrogen';
 import {
   createRequestHandler,
@@ -47,7 +47,7 @@ export default {
        * Hydrogen's Storefront client to the loader context.
        */
       const handleRequest = createRequestHandler({
-        build: remixBuild,
+        build: remix,
         mode: process.env.NODE_ENV,
         getLoadContext: () => ({session, storefront, env}),
       });
