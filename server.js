@@ -10,8 +10,8 @@ import {
 /**
  * Export a fetch handler in module format.
  */
-export default {
-  async fetch(request, env, executionContext) {
+ export default function fetch(request, env, executionContext) {
+  return (async () => {
     try {
       /**
        * Open a cache instance in the worker and a custom session instance.
@@ -69,7 +69,7 @@ export default {
       console.error(error);
       return new Response('An unexpected error occurred', {status: 500});
     }
-  },
+  })();
 };
 
 /**
