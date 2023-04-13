@@ -7,7 +7,7 @@
     },
     {
       "src": "app/**/*.js",
-      "use": "@remix-run/dev/server-build",
+      "use": "@remix-run/dev",
       "config": {
         "maxLambdaSize": "10mb"
       }
